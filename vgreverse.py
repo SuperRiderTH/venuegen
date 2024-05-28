@@ -17,10 +17,10 @@ def verify_overwrite(MIDIdata, name):
     existing_notes = False
     for note in MIDIdata.notes:
         if isinstance(note, MIDINote):
-            existing_events = True
+            existing_notes = True
             break
 
-    if existing_events:
+    if existing_notes:
         r = vg_verify("Notes found in \"%s\" track. Delete and replace with pulled venue?" % name)
     return r
 
